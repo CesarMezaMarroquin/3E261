@@ -1,0 +1,31 @@
+@startuml
+class personaje
+class Hacha
+class Martillo
+class Patineta
+class Leche
+class Manzana
+class Banana
+class Piña
+class Uvas
+class Fresa
+class Tomate
+class Zanahoria
+class HuevoBlanco
+class HuevoRojo
+class HuevoOculto
+class Angel
+class LLave
+class BolsaDePuntos
+class Diamante
+class CorazonExtra
+class VidaExtra
+class CristalMagico
+class EstatuaDorada
+class AnilloMagico
+class Botella
+class Pergamino
+class Carne
+
+
+@endu
