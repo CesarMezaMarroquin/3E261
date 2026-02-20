@@ -1,21 +1,52 @@
 @startuml
-class personaje
+
+class Personaje
+
 class Hacha
 class Martillo
+Personaje o-- Hacha
+Personaje o-- Martillo
+
 class Patineta
+Personaje o-- Patineta
+
 class Leche
 class Manzana
 class Banana
-class Piña
+class Pina
 class Uvas
 class Fresa
 class Tomate
 class Zanahoria
+class Carne
+class PlatanoGigante
+
+Personaje o-- Leche
+Personaje o-- Manzana
+Personaje o-- Banana
+Personaje o-- Pina
+Personaje o-- Uvas
+Personaje o-- Fresa
+Personaje o-- Tomate
+Personaje o-- Zanahoria
+Personaje o-- Carne
+Personaje o-- PlatanoGigante
+
 class HuevoBlanco
 class HuevoRojo
 class HuevoOculto
+
+Personaje o-- HuevoBlanco
+Personaje o-- HuevoRojo
+Personaje o-- HuevoOculto
+
 class Angel
-class LLave
+class Calavera
+
+HuevoRojo --> Angel
+Personaje -- Calavera
+
+class Llave
 class BolsaDePuntos
 class Diamante
 class CorazonExtra
@@ -25,7 +56,18 @@ class EstatuaDorada
 class AnilloMagico
 class Botella
 class Pergamino
-class Carne
+class CofreTesoro
 
+Personaje o-- Llave
+Personaje o-- BolsaDePuntos
+Personaje o-- Diamante
+Personaje o-- CorazonExtra
+Personaje o-- VidaExtra
+Personaje o-- CristalMagico
+Personaje o-- EstatuaDorada
+Personaje o-- AnilloMagico
+Personaje o-- Botella
+Personaje o-- Pergamino
+Personaje o-- CofreTesoro
 
-@endu
+@enduml
