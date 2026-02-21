@@ -13,13 +13,13 @@ MasterHiggins o-- Patineta
 class Fruta
 class Manzana
 class Banana
-class Uvas
+class Uva
 class Tomate
 class Zanahoria
 
 Fruta <|-- Manzana
 Fruta <|-- Banana
-Fruta <|-- Uvas
+Fruta <|-- Uva
 Fruta <|-- Tomate
 Fruta <|-- Zanahoria
 
@@ -57,8 +57,8 @@ Energia -- BarraEnergia
 
 class Puntos
 class Bonus
-MasterHiggins o-- Puntos
-Bonus --> Puntos
+MasterHiggins o-- Punto
+Bonus --> Punto
 
 class JefeMundo1
 class JefeMundo2
