@@ -1,73 +1,82 @@
 @startuml
 
-class Personaje
+class MasterHiggins
 
 class Hacha
-class Martillo
-Personaje o-- Hacha
-Personaje o-- Martillo
+class Fuego
+MasterHiggins o-- Hacha
+Hacha --> Fuego
 
 class Patineta
-Personaje o-- Patineta
+MasterHiggins o-- Patineta
 
-class Leche
+class Fruta
 class Manzana
 class Banana
-class Pina
 class Uvas
-class Fresa
 class Tomate
 class Zanahoria
-class Carne
-class PlatanoGigante
 
-Personaje o-- Leche
-Personaje o-- Manzana
-Personaje o-- Banana
-Personaje o-- Pina
-Personaje o-- Uvas
-Personaje o-- Fresa
-Personaje o-- Tomate
-Personaje o-- Zanahoria
-Personaje o-- Carne
-Personaje o-- PlatanoGigante
+Fruta <|-- Manzana
+Fruta <|-- Banana
+Fruta <|-- Uvas
+Fruta <|-- Tomate
+Fruta <|-- Zanahoria
 
-class HuevoBlanco
-class HuevoRojo
-class HuevoOculto
+MasterHiggins o-- Fruta
 
-Personaje o-- HuevoBlanco
-Personaje o-- HuevoRojo
-Personaje o-- HuevoOculto
-
+class Huevo
 class Angel
-class Calavera
+MasterHiggins o-- Huevo
+Huevo --> Hacha
+Huevo --> Patineta
+Huevo --> Angel
 
-HuevoRojo --> Angel
-Personaje -- Calavera
+class Enemigo
+class Caracol
+class Murcielago
+class Serpiente
+class Roca
+class JefeFinal
 
-class Llave
-class BolsaDePuntos
-class Diamante
-class CorazonExtra
-class VidaExtra
-class CristalMagico
-class EstatuaDorada
-class AnilloMagico
-class Botella
-class Pergamino
-class CofreTesoro
+Enemigo <|-- Caracol
+Enemigo <|-- Murcielago
+Enemigo <|-- Serpiente
+Enemigo <|-- Roca
+Enemigo <|-- JefeFinal
 
-Personaje o-- Llave
-Personaje o-- BolsaDePuntos
-Personaje o-- Diamante
-Personaje o-- CorazonExtra
-Personaje o-- VidaExtra
-Personaje o-- CristalMagico
-Personaje o-- EstatuaDorada
-Personaje o-- AnilloMagico
-Personaje o-- Botella
-Personaje o-- Pergamino
-Personaje o-- CofreTesoro
+MasterHiggins -- Enemigo
+
+class PrincesaTina
+MasterHiggins --> PrincesaTina
+
+class Energia
+class BarraEnergia
+MasterHiggins o-- Energia
+Energia -- BarraEnergia
+
+class Puntos
+class Bonus
+MasterHiggins o-- Puntos
+Bonus --> Puntos
+
+class JefeMundo1
+class JefeMundo2
+class JefeMundo3
+class JefeMundo4
+
+JefeFinal <|-- JefeMundo1
+JefeFinal <|-- JefeMundo2
+JefeFinal <|-- JefeMundo3
+JefeFinal <|-- JefeMundo4
+
+class Nivel
+class Mundo
+class Tiempo
+
+Mundo o-- Nivel
+Nivel o-- Enemigo
+Nivel o-- Fruta
+Nivel o-- Tiempo
 
 @enduml
