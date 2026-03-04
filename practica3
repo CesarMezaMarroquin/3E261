@@ -1,6 +1,10 @@
 @startuml
-
+class Jugador 
 class MasterHiggins
+
+class Arma{
+    + Hacha: Golpear()
+}
 class Hacha
 class Fuego
 class Patineta
@@ -33,7 +37,8 @@ class Punto
 class Bonus
 class Nivel
 class Mundo
-class Tiempo
+class Tiempo 
+
 
 MasterHiggins "1" o-- "0..1" Hacha
 Hacha "1" --> "0..1" Fuego
