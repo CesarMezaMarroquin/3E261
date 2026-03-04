@@ -1,6 +1,7 @@
 @startuml
 
 class MasterHiggins
+<<<<<<< HEAD
 
 class Hacha
 class Fuego
@@ -9,6 +10,11 @@ Hacha --> Fuego
 
 class Patineta
 MasterHiggins o-- Patineta
+=======
+class Hacha
+class Fuego
+class Patineta
+>>>>>>> 912126f (practica 4)
 
 class Fruta
 class Manzana
@@ -16,6 +22,7 @@ class Banana
 class Uva
 class Tomate
 class Zanahoria
+<<<<<<< HEAD
 
 Fruta <|-- Manzana
 Fruta <|-- Banana
@@ -31,6 +38,11 @@ MasterHiggins o-- Huevo
 Huevo --> Hacha
 Huevo --> Patineta
 Huevo --> Angel
+=======
+
+class Huevo
+class Angel
+>>>>>>> 912126f (practica 4)
 
 class Enemigo
 class Caracol
@@ -38,6 +50,7 @@ class Murcielago
 class Serpiente
 class Roca
 class JefeFinal
+<<<<<<< HEAD
 
 Enemigo <|-- Caracol
 Enemigo <|-- Murcielago
@@ -46,6 +59,63 @@ Enemigo <|-- Roca
 Enemigo <|-- JefeFinal
 
 MasterHiggins -- Enemigo
+=======
+class JefeMundoUno
+class JefeMundoDos
+class JefeMundoTres
+class JefeMundoCuatro
+
+class PrincesaTina
+class Energia
+class BarraEnergia
+class Punto
+class Bonus
+class Nivel
+class Mundo
+class Tiempo
+
+MasterHiggins o-- Hacha
+Hacha --> Fuego
+
+MasterHiggins o-- Patineta
+MasterHiggins o-- Fruta
+MasterHiggins o-- Huevo
+MasterHiggins -- Enemigo
+
+MasterHiggins -- Energia
+Energia -- BarraEnergia
+
+MasterHiggins -- Punto
+Bonus --> Punto
+
+MasterHiggins --> PrincesaTina
+
+Fruta <|-- Manzana
+Fruta <|-- Banana
+Fruta <|-- Uva
+Fruta <|-- Tomate
+Fruta <|-- Zanahoria
+
+Enemigo <|-- Caracol
+Enemigo <|-- Murcielago
+Enemigo <|-- Serpiente
+Enemigo <|-- Roca
+Enemigo <|-- JefeFinal
+
+JefeFinal <|-- JefeMundoUno
+JefeFinal <|-- JefeMundoDos
+JefeFinal <|-- JefeMundoTres
+JefeFinal <|-- JefeMundoCuatro
+
+Huevo --> Angel
+Huevo --> Hacha
+Huevo --> Patineta
+
+Mundo o-- Nivel
+Nivel o-- Enemigo
+Nivel o-- Fruta
+Nivel o-- Tiempo
+>>>>>>> 912126f (practica 4)
 
 class PrincesaTina
 MasterHiggins --> PrincesaTina

@@ -1,0 +1,11 @@
+@startuml
+class Mundo { 
+    -Nivel niveles [8]
+ }   
+ class Nivel
+ Mundo "1" *-- "1..8" Nivel
+
+
+
+
+@enduml
