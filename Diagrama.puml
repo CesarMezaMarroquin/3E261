@@ -1,20 +1,13 @@
 @startuml
-
+class Jugador 
 class MasterHiggins
-<<<<<<< HEAD
 
-class Hacha
-class Fuego
-MasterHiggins o-- Hacha
-Hacha --> Fuego
-
-class Patineta
-MasterHiggins o-- Patineta
-=======
+class Arma{
+    + Hacha: Golpear()
+}
 class Hacha
 class Fuego
 class Patineta
->>>>>>> 912126f (practica 4)
 
 class Fruta
 class Manzana
@@ -22,27 +15,9 @@ class Banana
 class Uva
 class Tomate
 class Zanahoria
-<<<<<<< HEAD
-
-Fruta <|-- Manzana
-Fruta <|-- Banana
-Fruta <|-- Uva
-Fruta <|-- Tomate
-Fruta <|-- Zanahoria
-
-MasterHiggins o-- Fruta
 
 class Huevo
 class Angel
-MasterHiggins o-- Huevo
-Huevo --> Hacha
-Huevo --> Patineta
-Huevo --> Angel
-=======
-
-class Huevo
-class Angel
->>>>>>> 912126f (practica 4)
 
 class Enemigo
 class Caracol
@@ -50,16 +25,6 @@ class Murcielago
 class Serpiente
 class Roca
 class JefeFinal
-<<<<<<< HEAD
-
-Enemigo <|-- Caracol
-Enemigo <|-- Murcielago
-Enemigo <|-- Serpiente
-Enemigo <|-- Roca
-Enemigo <|-- JefeFinal
-
-MasterHiggins -- Enemigo
-=======
 class JefeMundoUno
 class JefeMundoDos
 class JefeMundoTres
@@ -72,23 +37,24 @@ class Punto
 class Bonus
 class Nivel
 class Mundo
-class Tiempo
+class Tiempo 
 
-MasterHiggins o-- Hacha
-Hacha --> Fuego
 
-MasterHiggins o-- Patineta
-MasterHiggins o-- Fruta
-MasterHiggins o-- Huevo
-MasterHiggins -- Enemigo
+MasterHiggins "1" o-- "0..1" Hacha
+Hacha "1" --> "0..1" Fuego
 
-MasterHiggins -- Energia
-Energia -- BarraEnergia
+MasterHiggins "1" o-- "0..1" Patineta
+MasterHiggins "1" o-- "*" Fruta
+MasterHiggins "1" o-- "*" Huevo
+MasterHiggins "1" -- "*" Enemigo
 
-MasterHiggins -- Punto
-Bonus --> Punto
+MasterHiggins "1" -- "1" Energia
+Energia "1" -- "1" BarraEnergia
 
-MasterHiggins --> PrincesaTina
+MasterHiggins "1" -- "1" Punto
+Bonus "1" --> "1..*" Punto
+
+MasterHiggins "1" --> "1" PrincesaTina
 
 Fruta <|-- Manzana
 Fruta <|-- Banana
@@ -107,46 +73,13 @@ JefeFinal <|-- JefeMundoDos
 JefeFinal <|-- JefeMundoTres
 JefeFinal <|-- JefeMundoCuatro
 
-Huevo --> Angel
-Huevo --> Hacha
-Huevo --> Patineta
+Huevo "1" --> "0..1" Angel
+Huevo "1" --> "0..1" Hacha
+Huevo "1" --> "0..1" Patineta
 
-Mundo o-- Nivel
-Nivel o-- Enemigo
-Nivel o-- Fruta
-Nivel o-- Tiempo
->>>>>>> 912126f (practica 4)
-
-class PrincesaTina
-MasterHiggins --> PrincesaTina
-
-class Energia
-class BarraEnergia
-MasterHiggins o-- Energia
-Energia -- BarraEnergia
-
-class Puntos
-class Bonus
-MasterHiggins o-- Punto
-Bonus --> Punto
-
-class JefeMundo1
-class JefeMundo2
-class JefeMundo3
-class JefeMundo4
-
-JefeFinal <|-- JefeMundo1
-JefeFinal <|-- JefeMundo2
-JefeFinal <|-- JefeMundo3
-JefeFinal <|-- JefeMundo4
-
-class Nivel
-class Mundo
-class Tiempo
-
-Mundo o-- Nivel
-Nivel o-- Enemigo
-Nivel o-- Fruta
-Nivel o-- Tiempo
+Mundo "1" o-- "1..8" Nivel
+Nivel "1" o-- "*" Enemigo
+Nivel "1" o-- "*" Fruta
+Nivel "1" o-- "1" Tiempo
 
 @enduml
