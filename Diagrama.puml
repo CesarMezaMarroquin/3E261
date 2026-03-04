@@ -1,14 +1,17 @@
 @startuml
-class Jugador 
+
+class Mundo
+class Nivel
+class Tiempo
+class Energia
+class Punto
+
+class Jugador
 class MasterHiggins
+class Princesa
 
-class Arma{
-    + Hacha: Golpear()
-}
-class Hacha
-class Fuego
-class Patineta
 
+class Item
 class Fruta
 class Manzana
 class Banana
@@ -16,8 +19,15 @@ class Uva
 class Tomate
 class Zanahoria
 
+
 class Huevo
+class Hacha
 class Angel
+class Patineta
+class Fuego
+class Bebida
+
+
 
 class Enemigo
 class Caracol
@@ -30,31 +40,17 @@ class JefeMundoDos
 class JefeMundoTres
 class JefeMundoCuatro
 
-class PrincesaTina
-class Energia
-class BarraEnergia
-class Punto
-class Bonus
-class Nivel
-class Mundo
-class Tiempo 
 
 
-MasterHiggins "1" o-- "0..1" Hacha
-Hacha "1" --> "0..1" Fuego
+Jugador <|-- MasterHiggins
 
-MasterHiggins "1" o-- "0..1" Patineta
-MasterHiggins "1" o-- "*" Fruta
-MasterHiggins "1" o-- "*" Huevo
-MasterHiggins "1" -- "*" Enemigo
-
-MasterHiggins "1" -- "1" Energia
-Energia "1" -- "1" BarraEnergia
-
-MasterHiggins "1" -- "1" Punto
-Bonus "1" --> "1..*" Punto
-
-MasterHiggins "1" --> "1" PrincesaTina
+Item <|-- Fruta
+Item <|-- Huevo
+Item <|-- Hacha
+Item <|-- Angel
+Item <|-- Patineta
+Item <|-- Fuego
+Item <|-- Bebida
 
 Fruta <|-- Manzana
 Fruta <|-- Banana
@@ -73,13 +69,26 @@ JefeFinal <|-- JefeMundoDos
 JefeFinal <|-- JefeMundoTres
 JefeFinal <|-- JefeMundoCuatro
 
-Huevo "1" --> "0..1" Angel
-Huevo "1" --> "0..1" Hacha
-Huevo "1" --> "0..1" Patineta
 
-Mundo "1" o-- "1..8" Nivel
+
+Mundo "1" *-- "1..8" Nivel
+Nivel "1" *-- "1" Tiempo
+Nivel "1" *-- "1" Energia
+
 Nivel "1" o-- "*" Enemigo
-Nivel "1" o-- "*" Fruta
-Nivel "1" o-- "1" Tiempo
+Nivel "1" o-- "*" Item
+
+
+MasterHiggins "1" -- "1" Energia
+MasterHiggins "1" -- "1" Punto
+MasterHiggins "1" o-- "*" Item
+MasterHiggins --> Princesa
+
+
+Fruta --> Punto
+Bebida --> Punto
+Punto --> Energia
+Huevo "1" o-- "1" Item
+
 
 @enduml
