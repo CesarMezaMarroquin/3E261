@@ -1,46 +1,107 @@
 @startuml
 
-class Mundo
-class Nivel
-class Tiempo
-class Energia
-class Punto
+class Mundo{
+-Numero
++Iniciar()
+}
+
+class Nivel{
+-Numero 
++Comenzar()
+}
+
+class Tiempo{
+-TiempoRestante
++DisminuirTiempo()
+}
+
+class Energia{
+-NivelEnergiaActual
++AumentarEneria()
++DisminuirEnergia()
+}
+
+class Punto{
+-Valor
++AgregarPuntos()
++VerificarVidaExtra()
+}
+
 
 class Jugador
-class MasterHiggins
-class Princesa
 
+class MasterHiggins{
+-Energia
+-AgregarPuntos
++Mover()
++Atacar()
++UsarItem()
+}
 
-class Item
-class Fruta
+class Princesa{
++SerRescatada()
+}
+
+class Item{
++Usar()
+}
+
+class Fruta{
++DarPuntos()
+}
+
 class Manzana
 class Banana
 class Uva
 class Tomate
 class Zanahoria
 
+class Huevo{
++Romper()
+}
 
-class Huevo
-class Hacha
-class Angel
-class Patineta
-class Fuego
-class Bebida
+class Hacha{
++Lanzar()
+}
+
+class Angel{
++Darinvensibilidad()
+}
+
+class Patineta{
++AumentarVelocidad()
+}
+
+class Fuego{
++QuemarEnemigos()
+}
+
+class Bebida{
++RecuperarEnergia()
+}
 
 
+class Enemigo{
+-Vida
++Atacar()
++Seratacado()
+{
 
-class Enemigo
+
 class Caracol
 class Murcielago
 class Serpiente
 class Roca
-class JefeFinal
+
+
+class JefeFinal{
++AtacarEspecialmente()
+}
+
 class JefeMundoUno
 class JefeMundoDos
 class JefeMundoTres
 class JefeMundoCuatro
-
-
 
 Jugador <|-- MasterHiggins
 
@@ -70,7 +131,6 @@ JefeFinal <|-- JefeMundoTres
 JefeFinal <|-- JefeMundoCuatro
 
 
-
 Mundo "1" *-- "1..8" Nivel
 Nivel "1" *-- "1" Tiempo
 Nivel "1" *-- "1" Energia
@@ -87,8 +147,13 @@ MasterHiggins --> Princesa
 
 Fruta --> Punto
 Bebida --> Punto
-Punto --> Energia
-Huevo "1" o-- "1" Item
+Punto --> Energia 
 
+
+Huevo "1" --> "0..1" Hacha 
+Huevo "1" --> "0..1" Angel 
+Huevo "1" --> "0..1" Patineta 
+Huevo "1" --> "0..1" Fuego 
+Huevo "1" --> "0..1" Bebida 
 
 @enduml
