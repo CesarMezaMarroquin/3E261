@@ -103,33 +103,32 @@ class JefeMundoDos
 class JefeMundoTres
 class JefeMundoCuatro
 
-Jugador <|-- MasterHiggins
+MasterHiggins --|> Jugador
 
-Item <|-- Fruta
-Item <|-- Huevo
-Item <|-- Hacha
-Item <|-- Angel
-Item <|-- Patineta
-Item <|-- Fuego
-Item <|-- Bebida
+Fruta --|> Item
+Huevo --|> Item
+Hacha --|> Item
+Angel --|> Item
+Patineta --|> Item
+Fuego --|> Item
+Bebida --|> Item
 
-Fruta <|-- Manzana
-Fruta <|-- Banana
-Fruta <|-- Uva
-Fruta <|-- Tomate
-Fruta <|-- Zanahoria
+Manzana --|> Fruta
+Banana --|> Fruta
+Uva --|> Fruta
+Tomate --|> Fruta
+Zanahoria --|> Fruta
 
-Enemigo <|-- Caracol
-Enemigo <|-- Murcielago
-Enemigo <|-- Serpiente
-Enemigo <|-- Roca
-Enemigo <|-- JefeFinal
+Caracol --|> Enemigo
+Murcielago --|> Enemigo
+Serpiente --|> Enemigo
+Roca --|> Enemigo
+JefeFinal --|> Enemigo
 
-JefeFinal <|-- JefeMundoUno
-JefeFinal <|-- JefeMundoDos
-JefeFinal <|-- JefeMundoTres
-JefeFinal <|-- JefeMundoCuatro
-
+JefeMundoUno --|> JefeFinal
+JefeMundoDos --|> JefeFinal
+JefeMundoTres --|> JefeFinal
+JefeMundoCuatro --|> JefeFinal
 
 Mundo "1" *-- "1..8" Nivel
 Nivel "1" *-- "1" Tiempo
@@ -145,15 +144,5 @@ MasterHiggins "1" o-- "*" Item
 MasterHiggins --> Princesa
 
 
-Fruta --> Punto
-Bebida --> Punto
-Punto --> Energia 
-
-
-Huevo "1" --> "0..1" Hacha 
-Huevo "1" --> "0..1" Angel 
-Huevo "1" --> "0..1" Patineta 
-Huevo "1" --> "0..1" Fuego 
-Huevo "1" --> "0..1" Bebida 
 
 @enduml
