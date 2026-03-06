@@ -142,4 +142,5 @@ MasterHiggins "1" -- "1" Energia
 MasterHiggins "1" -- "1" Punto
 MasterHiggins "1" o-- "*" Item
 
+
 @enduml
